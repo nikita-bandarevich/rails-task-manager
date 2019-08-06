@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    # raise
     @task = Task.find(params[:id].to_i)
   end
 
@@ -13,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    saved_task = Task.create(task_security)
+    @task = Task.create(task_security)
     redirect_to tasks_path
   end
 
